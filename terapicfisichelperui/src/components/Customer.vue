@@ -1,5 +1,5 @@
 <template>
     <h2>
-        Componente Cliente !!
+        Componente Clientes !!
     </h2>
 </template>

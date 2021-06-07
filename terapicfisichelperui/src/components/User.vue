@@ -1,5 +1,5 @@
 <template>
     <h2>
-        Componente Usuario !!
+        Componente Usuarios !!
     </h2>
 </template>
