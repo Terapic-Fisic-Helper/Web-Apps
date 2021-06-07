@@ -1,5 +1,5 @@
 <template>
     <h2>
-        Componente Especialista !!
+        Componente Especialistas !!
     </h2>
 </template>
