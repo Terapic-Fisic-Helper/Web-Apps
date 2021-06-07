@@ -15,17 +15,17 @@ const routes = [
   },
   {
     path: '/users',
-    name: 'user',
+    name: 'users',
     component: User
   },
   {
-    path: '/customer',
-    name: 'customer',
+    path: '/customers',
+    name: 'customers',
     component: Customer
   },
   {
-    path: '/specialist',
-    name: 'specialist',
+    path: '/specialists',
+    name: 'specialists',
     component: Specialist
   }
 ]
