@@ -15,12 +15,12 @@ const routes = [
   },
   {
     path: '/users',
-    name: 'users',
+    name: 'user',
     component: User
   },
   {
-    path: '/customers',
-    name: 'customers',
+    path: '/customer',
+    name: 'customer',
     component: Customer
   },
   {
