@@ -11,7 +11,7 @@
             <v-icon>home</v-icon>
           </v-list-item-action>
           <v-list-item-title>
-            Inicios
+            Inicio
           </v-list-item-title>
         </v-list-item>
       </template>
@@ -21,7 +21,7 @@
           <v-list-item slot="activator">
             <v-list-item-content>
               <v-list-item-title>
-                Seguridades
+                Seguridad
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
