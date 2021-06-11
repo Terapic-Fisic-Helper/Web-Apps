@@ -14,7 +14,7 @@
                 class="text-xs-center" v-model="search" single-line hide-details></v-text-field>
                 <v-spacer></v-spacer>
                 <v-dialog v-model="dialog" max-width="800px">
-                    <template v-slot:activador="{ on }">
+                    <template v-slot:activator="{ on }">
                         <v-btn color="primary" dark class="mb-2" v-on="on">New User</v-btn>
                     </template>
                     <v-card>
@@ -35,7 +35,7 @@
                                         <v-text-field v-model="description" label="Description"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="birth" label="Birth"></v-text-field>
+                                        <v-text-field type="date" v-model="birth" label="Birth"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
                                         <v-text-field v-model="address" label="Address"></v-text-field>
