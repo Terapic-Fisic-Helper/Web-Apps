@@ -1,19 +1,19 @@
 <template>
     <v-data-table 
-    class="elevation-1"
     :headers="headers"
+    :items="users"
     :search="search"
     sort-by="name"
-    :items="users">
+    class="elevation-1" style="width:800px">
         <template v-slot:top>
             <v-toolbar flat color="white">
-                <v-toolbar-title>CRUD Users</v-toolbar-title>
+                <v-toolbar-title>User Lists</v-toolbar-title>
                 <v-divider class="mx-4" inset vertical />
                 <v-spacer></v-spacer>
                 <v-text-field label="Search User" append-icon="search" 
                 class="text-xs-center" v-model="search" single-line hide-details></v-text-field>
                 <v-spacer></v-spacer>
-                <v-dialog v-model="dialog" max-width="800px">
+                <v-dialog v-model="dialog" max-width="500px">
                     <template v-slot:activator="{ on }">
                         <v-btn color="primary" dark class="mb-2" v-on="on">New User</v-btn>
                     </template>
@@ -57,6 +57,9 @@
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
                                         <v-text-field type="password" v-model="password" label="Password"></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="12" md="12" v-show="isValidName">
+                                        <div class="red--text" v-for="v in validMessage" :key="v" v-text="v" />
                                     </v-col>
                                 </v-row>
                             </v-container>
@@ -119,6 +122,8 @@
             dialog: false,
             editedIndex: -1,
             users: [],
+            valid: 0,
+            validMessage: [],
             headers: [
                 { text: 'Name', value: 'name', sortable: true },
                 { text: 'LastName', value: 'lastname', sortable: false },
@@ -136,7 +141,7 @@
         }),
         computed: {
             formTitle() {
-                return this.editedIndex === -1 ? 'New User': 'Edit User';
+                return this.editedIndex === -1 ? 'New User': 'Edit User'
             }
         },
         watch: {
@@ -157,26 +162,26 @@
                 })
             },
             editItem(item) {
-                this.id = item.Id;
-                this.name = item.Name;
-                this.lastname = item.LastName;
-                this.description = item.Description;
-                this.birth = item.Birth;
-                this.address = item.Address;
-                this.phone = item.Phone;
-                this.age = item.Age;
-                this.email = item.Email;
-                this.country = item.Country;
-                this.gender = item.Gender;
-                this.password = item.Password;
+                this.id = item.id;
+                this.name = item.name;
+                this.lastname = item.lastName;
+                this.description = item.description;
+                this.birth = item.birth;
+                this.address = item.address;
+                this.phone = item.phone;
+                this.age = item.age;
+                this.email = item.email;
+                this.country = item.country;
+                this.gender = item.gender;
+                this.password = item.password;
                 this.editedIndex = 1;
                 this.dialog = true;
             },
             deleteItem(item) {
                 let me = this;
                 if(confirm('¿Estás seguro que quieres eliminar este User?'))
-                    axios.delete('api/Users/' + item.Id, {
-                        'id': item.Id
+                    axios.delete('api/Users/' + item.id, {
+                        'id': item.id
                     }).then(function(response){
                         console.log(item.id);
                         me.listUsers();
@@ -204,28 +209,31 @@
                 this.password = "";
             },
             save() {
+                if(this.isValidName()){
+                    return;
+                }
                 let me=this;
-                if(this.editedIndex >- 1) {
-                    axios.put('api/Users/',{
-                        'id': me.Id,
-                        'name': me.name,
-                        'lastName': me.lastname,
-                        'description': me.description,
-                        'birth': me.birth,
-                        'address': me.address,
-                        'phone': me.phone,
-                        'age': me.age,
-                        'email': me.email,
-                        'country': me.country,
-                        'gender': me.gender,
-                        'password': me.password
-                    }).then(function(response){
-                        me.close();
-                        me.listUsers();
-                        me.clean();
-                    }).catch(function(error) {
-                        console.log(error);
-                    });
+                if(this.editedIndex > -1) {
+                axios.put('api/Users/' + me.id,{
+                    'id': me.id,
+                    'name': me.name,
+                    'lastName': me.lastname,
+                    'description': me.description,
+                    'birth': me.birth,
+                    'address': me.address,
+                    'phone': me.phone,
+                    'age': me.age,
+                    'email': me.email,
+                    'country': me.country,
+                    'gender': me.gender,
+                    'password': me.password
+                }).then(function(response){
+                    me.close();
+                    me.listUsers();
+                    me.clean();
+                }).catch(function(error){
+                    console.log(error);
+                });
                 }
                 else {
                     axios.post('api/Users', {
@@ -248,7 +256,31 @@
                         console.log(error);
                     });
                 }
-                this.close();
+            },
+            isValidName() {
+                this.valid = 0;
+                this.validMessage = [];
+
+                if(this.name.length < 3 || this.name.length > 50) {
+                    this.validMessage.push("El Nombre debe tener mas de 3 caracteres y menos de 50 caracteres");
+                }
+
+                if(this.lastname.length < 3 || this.lastname.length > 50) {
+                    this.validMessage.push("El Apellido debe tener mas de 3 caracteres y menos de 50 caracteres");
+                }
+
+                if(this.email.length < 3 || this.email.length > 80) {
+                    this.validMessage.push("El Email debe tener mas de 3 caracteres y menos de 80 caracteres");
+                }
+
+                if(this.password.length < 8) {
+                    this.validMessage.push("El Password debe tener al menos 8 caracteres");
+                }
+
+                if(this.validMessage.length) {
+                    this.valid = 1;
+                }
+                return this.valid;
             }
         }
     }
