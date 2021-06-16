@@ -73,7 +73,6 @@
             equipamentId: '',
             sessionId: '',
             dialog: false,
-            editedIndex: -1,
             equipamentSessions: [],
             valid: 0,
             validMessage: [],
@@ -85,7 +84,7 @@
         }),
         computed: {
             formTitle() {
-                return this.editedIndex === -1 ? 'New EquipamentSessions': 'Edit EquipamentSessions'
+                return 'New EquipamentSessions'
             }
         },
         watch: {
