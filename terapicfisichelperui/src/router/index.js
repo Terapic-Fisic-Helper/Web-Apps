@@ -24,10 +24,35 @@ const routes = [
     component: Customer
   },
   {
-    path: '/specialist',
-    name: 'specialist',
+    path: '/specialists',
+    name: 'specialists',
     component: Specialist
-  }
+  },
+  {
+    path: '/sessions',
+    name: 'sessions',
+    component: Session
+  },
+  {
+    path: '/equipaments',
+    name: 'equipaments',
+    component: Equipament
+  },
+  {
+    path: '/sessionEquipaments',
+    name: 'sessionEquipaments',
+    component: SessionEquipament
+  },
+  {
+    path: '/tags',
+    name: 'tags',
+    component: Tag
+  },
+  {
+    path: '/tagSessions',
+    name: 'tagSessions',
+    component: TagSession
+  },
 ]
 
 const router = new VueRouter({
