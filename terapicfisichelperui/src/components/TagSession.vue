@@ -107,7 +107,7 @@
             save() {
                 let me=this;
                 axios.post('api/TagSessions', {
-                    'tagId': me.equipamentId,
+                    'tagId': me.tagId,
                     'sessionId': me.sessionId
                 }).then(function(response){
                     me.close();
