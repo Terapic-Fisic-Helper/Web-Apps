@@ -9,6 +9,8 @@ import Equipament from '../components/Equipament.vue'
 import SessionEquipament from '../components/SessionEquipament.vue'
 import Tag from '../components/Tag.vue'
 import TagSession from '../components/TagSession.vue'
+import Historie from '../components/Historie.vue'
+import Review from '../components/Review.vue'
 
 Vue.use(VueRouter)
 
@@ -57,6 +59,16 @@ const routes = [
     path: '/tagSessions',
     name: 'tagSessions',
     component: TagSession
+  },
+  {
+    path: '/histories',
+    name: 'histories',
+    component: Historie
+  },
+  {
+    path: '/reviews',
+    name: 'reviews',
+    component: Review
   },
 ]
 
