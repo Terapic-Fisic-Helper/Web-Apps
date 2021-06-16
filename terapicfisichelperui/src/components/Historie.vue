@@ -31,7 +31,7 @@
                                         <v-text-field v-model="sessionId" label="SessionId"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="watched" label="Watched"></v-text-field>
+                                        <v-text-field type="datetime" v-model="watched" label="Watched"></v-text-field>
                                     </v-col>
                                 </v-row>
                             </v-container>
