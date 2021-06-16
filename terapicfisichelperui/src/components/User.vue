@@ -4,7 +4,7 @@
     :items="users"
     :search="search"
     sort-by="name"
-    class="elevation-1" style="width:800px">
+    class="elevation-1" style="width:1000px">
         <template v-slot:top>
             <v-toolbar flat color="white">
                 <v-toolbar-title>User Lists</v-toolbar-title>
