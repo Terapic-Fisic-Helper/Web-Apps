@@ -3,7 +3,6 @@
     :headers="headers"
     :items="equipamentSessions"
     :search="search"
-    sort-by=""
     class="elevation-1" style="width:800px">
         <template v-slot:top>
             <v-toolbar flat color="white">
@@ -73,7 +72,6 @@
             equipamentId: '',
             sessionId: '',
             dialog: false,
-            editedIndex: -1,
             equipamentSessions: [],
             valid: 0,
             validMessage: [],
@@ -85,7 +83,7 @@
         }),
         computed: {
             formTitle() {
-                return this.editedIndex === -1 ? 'New EquipamentSessions': 'Edit EquipamentSessions'
+                return 'New EquipamentSessions'
             }
         },
         watch: {
