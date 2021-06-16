@@ -110,7 +110,7 @@
             save() {
                 let me=this;
                 axios.post('api/Histories', {
-                    'customerId': me.tagId,
+                    'customerId': me.customerId,
                     'sessionId': me.sessionId,
                     'watched': me.watched
                 }).then(function(response){
