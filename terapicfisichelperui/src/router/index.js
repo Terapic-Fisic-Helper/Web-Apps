@@ -4,6 +4,11 @@ import Home from '../views/Home.vue'
 import User from '../components/User.vue'
 import Customer from '../components/Customer.vue'
 import Specialist from '../components/Specialist.vue'
+import Session from '../components/Session.vue'
+import Equipament from '../components/Equipament.vue'
+import SessionEquipament from '../components/SessionEquipament.vue'
+import Tag from '../components/Tag.vue'
+import TagSession from '../components/TagSession.vue'
 
 Vue.use(VueRouter)
 
