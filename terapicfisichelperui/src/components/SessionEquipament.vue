@@ -73,8 +73,6 @@
             sessionId: 0,
             dialog: false,
             equipamentSessions: [],
-            valid: 0,
-            validMessage: [],
             headers: [
                 { text: 'EquipamentId', value: 'equipamentId', sortable: false },
                 { text: 'SessionId', value: 'sessionId', sortable: false },
@@ -125,9 +123,6 @@
                 this.sessionId = "";
             },
             save() {
-                if(this.isValidName()){
-                    return;
-                }
                 let me=this;
                 axios.post('api/EquipamentSessions', {
                     'equipamentId': me.equipamentId,
@@ -139,23 +134,6 @@
                 }).catch(function(error) {
                     console.log(error);
                 });
-            },
-            isValidName() {
-                this.valid = 0;
-                this.validMessage = [];
-
-                if(this.equipamentId.length) {
-                    this.validMessage.push("El Codigo Equipaments debe ser considerado");
-                }
-
-                if(this.sessionId.length) {
-                    this.validMessage.push("El Codigo Sessions debe ser considerado");
-                }
-
-                if(this.validMessage.length) {
-                    this.valid = 1;
-                }
-                return this.valid;
             }
         }
     }
