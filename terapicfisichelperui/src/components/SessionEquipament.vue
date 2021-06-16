@@ -69,8 +69,8 @@
     export default {
         data:() => ({
             search: '',
-            equipamentId: '',
-            sessionId: '',
+            equipamentId: 0,
+            sessionId: 0,
             dialog: false,
             equipamentSessions: [],
             valid: 0,
@@ -83,7 +83,7 @@
         }),
         computed: {
             formTitle() {
-                return 'New EquipamentSessions'
+                return 'New EquipamentSessions';
             }
         },
         watch: {
