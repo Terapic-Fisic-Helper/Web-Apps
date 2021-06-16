@@ -30,9 +30,6 @@
                                     <v-col cols="12" sm="12" md="12">
                                         <v-text-field v-model="sessionId" label="SessionId"></v-text-field>
                                     </v-col>
-                                    <v-col cols="12" sm="12" md="12" v-show="isValidName">
-                                        <div class="red--text" v-for="v in validMessage" :key="v" v-text="v" />
-                                    </v-col>
                                 </v-row>
                             </v-container>
                         </v-card-text>
@@ -72,7 +69,6 @@
             headers: [
                 { text: 'TagId', value: 'tagId', sortable: false },
                 { text: 'SessionId', value: 'sessionId', sortable: false },
-                { text: 'Actions', value: 'actions', sortable: false },
             ]
         }),
         computed: {
