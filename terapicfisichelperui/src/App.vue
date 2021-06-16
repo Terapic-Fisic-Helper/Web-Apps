@@ -65,7 +65,7 @@
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item :to="{ name:'' }">
+          <v-list-item :to="{ name:'sessions' }">
             <v-list-item-action>
               <v-icon>table_chart</v-icon>
             </v-list-item-action>
@@ -75,7 +75,7 @@
               </v-list-item-title> 
             </v-list-item-content>
           </v-list-item>
-          <v-list-item :to="{ name:'' }">
+          <v-list-item :to="{ name:'equipaments' }">
             <v-list-item-action>
               <v-icon>table_chart</v-icon>
             </v-list-item-action>
@@ -85,7 +85,7 @@
               </v-list-item-title> 
             </v-list-item-content>
           </v-list-item>
-          <v-list-item :to="{ name:'' }">
+          <v-list-item :to="{ name:'tags' }">
             <v-list-item-action>
               <v-icon>table_chart</v-icon>
             </v-list-item-action>
@@ -95,7 +95,7 @@
               </v-list-item-title> 
             </v-list-item-content>
           </v-list-item>
-          <v-list-item :to="{ name:'' }">
+          <v-list-item :to="{ name:'sessionEquipaments' }">
             <v-list-item-action>
               <v-icon>table_chart</v-icon>
             </v-list-item-action>
@@ -105,7 +105,7 @@
               </v-list-item-title> 
             </v-list-item-content>
           </v-list-item>
-          <v-list-item :to="{ name:'' }">
+          <v-list-item :to="{ name:'tagSessions' }">
             <v-list-item-action>
               <v-icon>table_chart</v-icon>
             </v-list-item-action>
