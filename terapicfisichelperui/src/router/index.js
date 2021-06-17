@@ -11,6 +11,8 @@ import Tag from '../components/Tag.vue'
 import TagSession from '../components/TagSession.vue'
 import Historie from '../components/Historie.vue'
 import Review from '../components/Review.vue'
+import Subscription from '../components/Subscription.vue'
+import SubscriptionPlan from '../components/SubscriptionPlan.vue'
 
 Vue.use(VueRouter)
 
@@ -70,6 +72,16 @@ const routes = [
     name: 'reviews',
     component: Review
   },
+  {
+    path: '/subscriptions',
+    name: 'subscriptions',
+    component: Subscription
+  },
+  {
+    path: '/subscriptionPlans',
+    name: 'subscriptionPlans',
+    component: SubscriptionPlan
+  }
 ]
 
 const router = new VueRouter({
