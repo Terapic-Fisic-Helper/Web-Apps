@@ -135,7 +135,7 @@
             },
             save() {
                 let me=this;
-                axios.post('api/SubscriptionPlans', {
+                axios.post('api/Subscriptions', {
                     'customerId': me.customerId,
                     'subscriptionPlanId': me.subscriptionPlanId,
                     'expiryDate': me.expiryDate,
