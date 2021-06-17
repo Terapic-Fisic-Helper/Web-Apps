@@ -189,10 +189,6 @@
                     this.validMessage.push("LA descripcion debe tener mas de 3 caracteres y menos de 255 caracteres");
                 }
 
-                if(this.cost.length) {
-                    this.validMessage.push("El Costo debe ser colocado si o si");
-                }
-
                 if(this.validMessage.length) {
                     this.valid = 1;
                 }
