@@ -82,7 +82,6 @@ const routes = [
     name: 'subscriptionPlans',
     component: SubscriptionPlan
   }
-]
 
 const router = new VueRouter({
   mode: 'history',
