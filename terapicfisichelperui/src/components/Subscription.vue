@@ -80,8 +80,6 @@
             startDate: '',
             dialog: false,
             subscriptions: [],
-            valid: 0,
-            validMessage: [],
             headers: [
                 { text: 'CustomerId', value: 'customerId', sortable: true },
                 { text: 'SubscriptionPlanId', value: 'subscriptionPlanId', sortable: false },
@@ -111,13 +109,6 @@
                 }).catch(function(error){
                     console.log(error);
                 })
-            },
-            editItem(item) {
-                this.customerId = item.customerId;
-                this.subscriptionPlanId = item.subscriptionPlanId;
-                this.expiryDate = item.expiryDate;
-                this.startDate = item.startDate;
-                this.dialog = true;
             },
             deleteItem(item) {
                 let me = this;
