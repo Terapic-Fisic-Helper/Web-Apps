@@ -16,23 +16,21 @@
         </h1>
 
         <p class="subheading font-weight-regular">
-          Descubre que le sucede a tu cuerpo, y como puedes solucionar tus molestias
-          conectate con los mejores profesionales en rehabilitación
-          <br>¡Desde la comodidad de tu hogar!
+          Descubre que le sucede a tu cuerpo, y como puedes solucionar tus
+          molestias conectate con los mejores profesionales en rehabilitación
+          <br />¡Desde la comodidad de tu hogar!
           <a
             href="https://terapic-fisic-helper.github.io/Landing-Page/"
             target="_blank"
-          >Nuesto Landing Page</a>
+            >Nuesto Landing Page</a
+          >
         </p>
       </v-col>
 
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
+      <v-col class="mb-5" cols="12">
         <h2 class="headline font-weight-bold mb-3">
           Nuestro objetivo
-          <br>es aliviar tus malestares 
+          <br />es aliviar tus malestares
         </h2>
 
         <v-row justify="center">
@@ -41,7 +39,7 @@
           </a>
           <a class="subheading mx-3" target="_blank">
             Para el Terapista -
-            <br>Centro de Terapia
+            <br />Centro de Terapia
           </a>
           <a class="subheading mx-3" target="_blank">
             Para el Familiar
@@ -49,19 +47,13 @@
         </v-row>
       </v-col>
 
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
+      <v-col class="mb-5" cols="12">
         <h2 class="headline font-weight-bold mb-3">
           Únete hoy a nuestra comunidad de pacientes satisfechos
         </h2>
       </v-col>
 
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
+      <v-col class="mb-5" cols="12">
         <h2 class="headline font-weight-bold mb-3">
           Las mejores features en nuestra Web App
         </h2>
@@ -71,10 +63,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'Principal',
+export default {
+  name: "Principal",
 
-    data: () => ({
-    }),
-  }
+  data: () => ({}),
+};
 </script>
