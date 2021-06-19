@@ -1,3 +1,15 @@
+<style>
+.backg-img {
+  background: url("./assets/bann.png") no-repeat center;
+  background-size: cover;
+  /* background-position-y: -100px; */
+  /* position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px; */
+}
+</style>
 <template>
   <v-app id="inspire">
     <v-navigation-drawer
@@ -197,6 +209,7 @@
       app
       color="light-blue darken-4"
       dark
+      class="backg-img"
     >
       <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
