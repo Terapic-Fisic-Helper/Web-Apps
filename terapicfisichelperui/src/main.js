@@ -7,7 +7,8 @@ import axios from 'axios'
 
 Vue.config.productionTip = false
 
-axios.defaults.baseURL = 'http://localhost:17374/'
+//axios.defaults.baseURL = 'http://localhost:17374/'
+axios.defaults.baseURL = 'https://terapicfisichelperweb20210507135641.azurewebsites.net/'
 
 new Vue({
   router,
